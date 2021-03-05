@@ -10,27 +10,27 @@ public class Knapsack {
     }
 
     public int maxValue(int[] weights, int[] values, int maxWeight) {
-        int[][] dp = new int[weights.length][maxWeight+1];
+        int[][] dp = new int[weights.length][maxWeight + 1];
 
-        for(int i = 0; i < dp.length; i++) {
+        for (int i = 0; i < dp.length; i++) {
             dp[i][0] = 0;
         }
 
-        for(int i = 0; i < dp.length; i++) {
-            for(int j = 1; j <= maxWeight; j++) {
-                if(weights[i] <= j && i == 0) {
+        for (int i = 0; i < dp.length; i++) {
+            for (int j = 1; j <= maxWeight; j++) {
+                if (weights[i] <= j && i == 0) {
                     dp[i][j] = values[i];
                     continue;
                 }
 
-                if(weights[i] > j) {
-                    dp[i][j] = dp[i-1][j];
+                if (weights[i] > j) {
+                    dp[i][j] = dp[i - 1][j];
                 } else {
-                    dp[i][j] = Math.max(dp[i-1][j], values[i] + dp[i-1][j-weights[i]]);
+                    dp[i][j] = Math.max(dp[i - 1][j], values[i] + dp[i - 1][j - weights[i]]);
                 }
             }
         }
-        return dp[weights.length-1][maxWeight];
+        return dp[weights.length - 1][maxWeight];
     }
 
 

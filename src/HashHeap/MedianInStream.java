@@ -18,7 +18,7 @@ public class MedianInStream {
                     minHeap.add(maxHeap.remove());
                     maxHeap.add(array[i]);
                 }
-                median = (minHeap.peek()+maxHeap.peek())/2;
+                median = (minHeap.peek() + maxHeap.peek()) / 2;
             } else if (minHeap.size() > maxHeap.size()) {
                 if (array[i] < median) {
                     maxHeap.add(array[i]);
@@ -26,7 +26,7 @@ public class MedianInStream {
                     maxHeap.add(minHeap.remove());
                     minHeap.add(array[i]);
                 }
-                median = (minHeap.peek()+maxHeap.peek())/2;
+                median = (minHeap.peek() + maxHeap.peek()) / 2;
             } else {
                 if (array[i] > median) {
                     minHeap.add(array[i]);

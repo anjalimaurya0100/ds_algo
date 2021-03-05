@@ -20,6 +20,20 @@ public class LRUCache {
         this.count = 0;
     }
 
+    public static void main(String[] args) {
+        LRUCache lru = new LRUCache(4);
+        lru.refer(1);
+        lru.refer(2);
+        lru.refer(3);
+        lru.refer(1);
+        lru.refer(4);
+        lru.refer(5);
+        lru.refer(2);
+        lru.refer(2);
+        lru.refer(1);
+        lru.display();
+    }
+
     public boolean refer(Integer value) {
         if (map.containsKey(value)) {
             DNode<Integer> node = map.remove(value);
@@ -48,19 +62,5 @@ public class LRUCache {
             System.out.println(temp.data);
             temp = temp.next;
         }
-    }
-
-    public static void main(String[] args) {
-        LRUCache lru = new LRUCache(4);
-        lru.refer(1);
-        lru.refer(2);
-        lru.refer(3);
-        lru.refer(1);
-        lru.refer(4);
-        lru.refer(5);
-        lru.refer(2);
-        lru.refer(2);
-        lru.refer(1);
-        lru.display();
     }
 }

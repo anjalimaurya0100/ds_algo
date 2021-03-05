@@ -1,10 +1,25 @@
 package stack_queue;
 
-public class  StackUsingLL {
+public class StackUsingLL {
     Node top;
 
     public StackUsingLL() {
         this.top = null;
+    }
+
+    public static void main(String[] args) {
+        StackUsingLL sul = new StackUsingLL();
+        sul.push(10);
+        sul.push(11);
+        sul.push(12);
+        sul.push(13);
+        System.out.println(sul.pop());
+        System.out.println(sul.pop());
+        System.out.println(sul.pop());
+        System.out.println(sul.isEmpty());
+        System.out.println(sul.pop());
+        System.out.println(sul.isEmpty());
+        System.out.println(sul.pop());
     }
 
     public void push(int value) {
@@ -23,22 +38,7 @@ public class  StackUsingLL {
         return node;
     }
 
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         return top == null;
-    }
-
-    public static void main(String[] args) {
-        StackUsingLL sul = new StackUsingLL();
-        sul.push(10);
-        sul.push(11);
-        sul.push(12);
-        sul.push(13);
-        System.out.println(sul.pop());
-        System.out.println(sul.pop());
-        System.out.println(sul.pop());
-        System.out.println(sul.isEmpty());
-        System.out.println(sul.pop());
-        System.out.println(sul.isEmpty());
-        System.out.println(sul.pop());
     }
 }

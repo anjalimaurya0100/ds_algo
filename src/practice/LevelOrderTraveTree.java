@@ -7,7 +7,7 @@ import java.util.Stack;
 public class LevelOrderTraveTree {
 
     public static void leveOT(Node node) {
-        if(node == null){
+        if (node == null) {
             return;
         }
         Queue<Node> q = new LinkedList<>();
@@ -24,31 +24,31 @@ public class LevelOrderTraveTree {
         }
     }
 
-    public static  void reverseLT(Node node){
-        if(node == null){
+    public static void reverseLT(Node node) {
+        if (node == null) {
             return;
         }
         Queue<Node> q2 = new LinkedList<>();
         Stack<Integer> stack = new Stack<>();
         q2.add(node);
-         while(!q2.isEmpty()){
-             Node temp = q2.poll();
-             stack.push(temp.data);
-             if(temp.left != null){
-                 q2.add(temp.left);
-             }
-             if(temp.right != null){
-                 q2.add(temp.right);
-             }
-         }
-         while(!stack.isEmpty()){
-             int result = stack.pop();
-             System.out.println(result);
-         }
+        while (!q2.isEmpty()) {
+            Node temp = q2.poll();
+            stack.push(temp.data);
+            if (temp.left != null) {
+                q2.add(temp.left);
+            }
+            if (temp.right != null) {
+                q2.add(temp.right);
+            }
+        }
+        while (!stack.isEmpty()) {
+            int result = stack.pop();
+            System.out.println(result);
+        }
     }
 
     public static void main(String[] args) {
-       Node root = new practice.Node(13);
+        Node root = new practice.Node(13);
         root.left = new practice.Node(10);
         root.left.left = new practice.Node(8);
         root.left.right = new practice.Node(12);

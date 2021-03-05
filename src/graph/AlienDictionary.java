@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.Stack;
 
 public class AlienDictionary {
-//    LinkedList<Integer>[] adjacencyList;
+    //    LinkedList<Integer>[] adjacencyList;
     Map<Integer, LinkedList<Integer>> adjacencyList;
     boolean[] visited;
     int numberOfVertices;
@@ -24,8 +24,15 @@ public class AlienDictionary {
         }
     }
 
+    public static void main(String[] args) {
+        String[] words = {"baa", "abcd", "abca", "cab", "cad"};
+        AlienDictionary ad = new AlienDictionary(4);
+        ad.buildGraph(words);
+        ad.topologicalSort();
+    }
+
     public void buildGraph(String[] words) {
-        for (int i = 0; i < words.length-1; i++) {
+        for (int i = 0; i < words.length - 1; i++) {
             String w1 = words[i];
             String w2 = words[i + 1];
 
@@ -40,12 +47,12 @@ public class AlienDictionary {
 
     private void topologicalSort() {
         Stack<Integer> stack = new Stack<>();
-        for(int u = 0 ; u < this.numberOfVertices ; u++){
-            if(!visited[u]){
+        for (int u = 0; u < this.numberOfVertices; u++) {
+            if (!visited[u]) {
                 dfs(u, stack);
             }
         }
-        while (!stack.isEmpty()){
+        while (!stack.isEmpty()) {
             System.out.println((char) ('a' + stack.pop()));
         }
     }
@@ -53,8 +60,8 @@ public class AlienDictionary {
     private void dfs(int u, Stack<Integer> stack) {
         visited[u] = true;
 //        for(Integer v : adjacencyList[u]) {
-        for(Integer v : adjacencyList.get(u)) {
-            if(!visited[v]){
+        for (Integer v : adjacencyList.get(u)) {
+            if (!visited[v]) {
                 dfs(v, stack);
             }
 
@@ -65,12 +72,5 @@ public class AlienDictionary {
     private void addEdge(int u, int v) {
 //        adjacencyList[u].add(v);
         adjacencyList.get(u).add(v);
-    }
-
-    public static void main(String[] args) {
-        String[] words = {"baa", "abcd", "abca", "cab", "cad"};
-        AlienDictionary ad = new AlienDictionary(4);
-        ad.buildGraph(words);
-        ad.topologicalSort();
     }
 }

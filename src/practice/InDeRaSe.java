@@ -8,9 +8,23 @@ public class InDeRaSe {
     ArrayList<Integer> a;
     Map<Integer, Integer> map;
 
-    public InDeRaSe(){
+    public InDeRaSe() {
         this.a = new ArrayList<>();
         this.map = new HashMap<>();
+    }
+
+    public static void main(String[] args) {
+        InDeRaSe obj = new InDeRaSe();
+        obj.insert(1);
+        obj.insert(2);
+        obj.insert(3);
+        obj.delete(3);
+        obj.insert(4);
+        obj.insert(5);
+
+        System.out.println(obj.search(0));
+        System.out.println(obj.random());
+
     }
 
     public void insert(int v) {
@@ -36,19 +50,5 @@ public class InDeRaSe {
     public int random() {
         int i = (int) ((Math.random() * 100) % a.size());
         return a.get(i);
-    }
-
-    public static void main(String[] args) {
-        InDeRaSe obj = new InDeRaSe();
-        obj.insert(1);
-        obj.insert(2);
-        obj.insert(3);
-        obj.delete(3);
-        obj.insert(4);
-        obj.insert(5);
-
-        System.out.println(obj.search(0));
-        System.out.println(obj.random());
-
     }
 }

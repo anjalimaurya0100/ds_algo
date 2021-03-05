@@ -23,7 +23,7 @@ public class InversionCountByMergeSort {
                 tempArray[k++] = array[i++];
             } else {
                 tempArray[k++] = array[j++];
-                swaps += (mid+1-i);
+                swaps += (mid + 1 - i);
             }
         }
         //copy remaining items

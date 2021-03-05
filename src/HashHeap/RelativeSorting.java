@@ -40,9 +40,9 @@ public class RelativeSorting {
     }
 
     public static void main(String[] args) {
-        int[] first = {2,3,4,5,2,3,4,4,1};
-        int[] second = {3,2};
-        relativeSorting(first,second);
+        int[] first = {2, 3, 4, 5, 2, 3, 4, 4, 1};
+        int[] second = {3, 2};
+        relativeSorting(first, second);
         System.out.println(Arrays.toString(first));
     }
 }

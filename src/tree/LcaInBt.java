@@ -1,34 +1,35 @@
 package tree;
 
 public class LcaInBt {
-    public static Node lcaInBt(Node node, int a, int b){
-        if(node == null)
+    public static Node lcaVar = null;
+
+    public static Node lcaInBt(Node node, int a, int b) {
+        if (node == null)
             return null;
 
-        if(node.data == a || node.data ==b)
+        if (node.data == a || node.data == b)
             return node;
 
-        Node left = lcaInBt(node.left,a,b);
-        Node right = lcaInBt(node.right,a,b);
+        Node left = lcaInBt(node.left, a, b);
+        Node right = lcaInBt(node.right, a, b);
 
-        if(left != null && right != null)
+        if (left != null && right != null)
             return node;
 
         return (left != null ? left : right);
     }
 
-    public static Node lcaVar = null;
-    public static boolean lcaInBtVariation(Node node, int a, int b){
-        if(node == null)
+    public static boolean lcaInBtVariation(Node node, int a, int b) {
+        if (node == null)
             return false;
 
-        if(node.data == a || node.data ==b)
+        if (node.data == a || node.data == b)
             return true;
 
-        boolean left = lcaInBtVariation(node.left,a,b);
-        boolean right = lcaInBtVariation(node.right,a,b);
+        boolean left = lcaInBtVariation(node.left, a, b);
+        boolean right = lcaInBtVariation(node.right, a, b);
 
-        if(left && right) {
+        if (left && right) {
             lcaVar = node;
             return true;
         }

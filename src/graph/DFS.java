@@ -5,26 +5,10 @@ public class DFS {
     int v;
     boolean[] visited;
 
-    public DFS(int v){
+    public DFS(int v) {
         this.v = v;
         this.am = new int[v][v];
         this.visited = new boolean[v];
-    }
-
-    public void addEdge(int u , int v){
-        this.am[u][v] = 1;
-
-    }
-
-    public void dfs(int u){
-        System.out.println(u);
-        visited[u] = true;
-
-        for(int v = 0; v < am[u].length; v++) {
-            if(am[u][v] == 1 && !visited[v]) {
-                dfs(v);
-            }
-        }
     }
 
     public static void main(String[] args) {
@@ -39,5 +23,21 @@ public class DFS {
 
         System.out.println("Depth First Traversal (starting from vertex 2)");
         g.dfs(2);
+    }
+
+    public void addEdge(int u, int v) {
+        this.am[u][v] = 1;
+
+    }
+
+    public void dfs(int u) {
+        System.out.println(u);
+        visited[u] = true;
+
+        for (int v = 0; v < am[u].length; v++) {
+            if (am[u][v] == 1 && !visited[v]) {
+                dfs(v);
+            }
+        }
     }
 }

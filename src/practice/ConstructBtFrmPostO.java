@@ -1,14 +1,9 @@
 package practice;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
 public class ConstructBtFrmPostO {
-    public static class Index {
-        int index;
-    }
-
     public static void main(String[] args) {
         int[] inorder = {4, 2, 1, 7, 5, 8, 3, 6};
         int[] postorder = {4, 2, 7, 8, 5, 6, 3, 1};
@@ -49,5 +44,9 @@ public class ConstructBtFrmPostO {
         inOrder(node.left);
         System.out.println(node.data);
         inOrder(node.right);
+    }
+
+    public static class Index {
+        int index;
     }
 }

@@ -11,7 +11,7 @@ public class FirstNonRepeatingCharInStream {
         DLL<Character> dll = new DLL<>();
         Map<Character, DNode<Character>> map = new HashMap<>();
 
-        for(Character c: charArray) {
+        for (Character c : charArray) {
             if (!map.containsKey(c)) {
                 dll.insertLast(c);
                 map.put(c, dll.tail);

@@ -1,27 +1,8 @@
 package linkedlist;
 
 public class RearrangeFirstLastLL {
-    public Node first = null;
     public static boolean midReached = false;
-
-    public void rearrangeLL(Node last) {
-        if (last == null)
-            return;
-
-        rearrangeLL(last.next);
-        if (midReached)
-            return;
-
-        if(first == last || first.next == last) {
-            last.next = null;
-            midReached = true;
-            return;
-        }
-
-        last.next = first.next;
-        first.next = last;
-        first = first.next.next;
-    }
+    public Node first = null;
 
     public static void main(String[] args) {
         LinkedList list = new LinkedList();
@@ -40,5 +21,24 @@ public class RearrangeFirstLastLL {
 
         rr.rearrangeLL(list.head);
         list.printList(list.head);
+    }
+
+    public void rearrangeLL(Node last) {
+        if (last == null)
+            return;
+
+        rearrangeLL(last.next);
+        if (midReached)
+            return;
+
+        if (first == last || first.next == last) {
+            last.next = null;
+            midReached = true;
+            return;
+        }
+
+        last.next = first.next;
+        first.next = last;
+        first = first.next.next;
     }
 }

@@ -1,6 +1,27 @@
 package linkedlist;
 
 public class MergeTwoSortedLL {
+    public static void main(String[] args) {
+        System.out.println("LL first");
+        LinkedList list1 = new LinkedList();
+        list1.insert(1);
+        list1.insert(5);
+        list1.insert(6);
+        list1.printList(list1.head);
+
+        System.out.println("LL second");
+        LinkedList list2 = new LinkedList();
+        list2.insert(2);
+        list2.insert(3);
+        list2.insert(4);
+        list2.printList(list2.head);
+
+        System.out.println("LL merged");
+        MergeTwoSortedLL mm = new MergeTwoSortedLL();
+        Node newLL = mm.merge(list1.head, list2.head);
+        mm.printList(newLL);
+    }
+
     public Node merge(Node first, Node second) {
         Node newLL = new Node(-1);
         Node temp = newLL;
@@ -35,26 +56,5 @@ public class MergeTwoSortedLL {
             System.out.println(temp.data);
             temp = temp.next;
         }
-    }
-
-    public static void main(String[] args) {
-        System.out.println("LL first");
-        LinkedList list1 = new LinkedList();
-        list1.insert(1);
-        list1.insert(5);
-        list1.insert(6);
-        list1.printList(list1.head);
-
-        System.out.println("LL second");
-        LinkedList list2 = new LinkedList();
-        list2.insert(2);
-        list2.insert(3);
-        list2.insert(4);
-        list2.printList(list2.head);
-
-        System.out.println("LL merged");
-        MergeTwoSortedLL mm = new MergeTwoSortedLL();
-        Node newLL = mm.merge(list1.head, list2.head);
-        mm.printList(newLL);
     }
 }

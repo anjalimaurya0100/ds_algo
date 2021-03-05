@@ -1,28 +1,7 @@
 package linkedlist;
 
 public class CloneLL {
-    static class NodeRandom {
-        int data;
-        NodeRandom random;
-        NodeRandom next;
-
-        public NodeRandom(int data){
-            this.data = data;
-            this.random = null;
-            this.next = null;
-        }
-
-        @Override
-        public String toString() {
-            Integer nextdata = this.next != null ? this.next.data : null;
-            Integer randomData = this.random != null ? this.random.data : null;
-            return "[" + "data=" + data + ", next=" + nextdata +
-                    ", random=" + randomData +
-                    "]";
-        }
-    }
-
-    public static NodeRandom cloneLL(NodeRandom node){
+    public static NodeRandom cloneLL(NodeRandom node) {
         NodeRandom next = null;
         NodeRandom curr = node;
 
@@ -89,5 +68,26 @@ public class CloneLL {
 
         System.out.println("\nCloned list : ");
         printNextRandomList(clone);
+    }
+
+    static class NodeRandom {
+        int data;
+        NodeRandom random;
+        NodeRandom next;
+
+        public NodeRandom(int data) {
+            this.data = data;
+            this.random = null;
+            this.next = null;
+        }
+
+        @Override
+        public String toString() {
+            Integer nextdata = this.next != null ? this.next.data : null;
+            Integer randomData = this.random != null ? this.random.data : null;
+            return "[" + "data=" + data + ", next=" + nextdata +
+                    ", random=" + randomData +
+                    "]";
+        }
     }
 }

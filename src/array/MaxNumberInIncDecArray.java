@@ -1,11 +1,9 @@
 package array;
 
-import java.util.Arrays;
-
-public class  MaxNumberInIncDecArray {
+public class MaxNumberInIncDecArray {
     public static void main(String[] args) {
-        int[] array = {1,2,3,4,5,4,3,2,1};
-        int val = maxNumber(array,0, array.length-1);
+        int[] array = {1, 2, 3, 4, 5, 4, 3, 2, 1};
+        int val = maxNumber(array, 0, array.length - 1);
         System.out.println(val);
     }
 
@@ -21,8 +19,8 @@ public class  MaxNumberInIncDecArray {
 
         if (array[mid - 1] <= array[mid] && array[mid] <= array[mid + 1]) {
             return maxNumber(array, mid + 1, high);
-        } else if (array[mid-1] >= array[mid] && array[mid] >= array[mid+1]){
-            return maxNumber(array, low, mid-1);
+        } else if (array[mid - 1] >= array[mid] && array[mid] >= array[mid + 1]) {
+            return maxNumber(array, low, mid - 1);
         } else {
             return array[mid];
         }

@@ -31,14 +31,14 @@ public class BoggleSearch {
             count++;
         }
 
-        int[] row = {-1,-1,-1,0,0,1,1,1};
-        int[] col = {-1,0,1,-1,1,-1,0,1};
-        for(int a = 0 ; a<8 ; a++){
-            int r = i+row[a];
-            int c = j+col[a];
+        int[] row = {-1, -1, -1, 0, 0, 1, 1, 1};
+        int[] col = {-1, 0, 1, -1, 1, -1, 0, 1};
+        for (int a = 0; a < 8; a++) {
+            int r = i + row[a];
+            int c = j + col[a];
 
-            if(r>=0 && c>=0 && r<m && c<n && !visited[r][c]){
-                findWords(matrix,words,visited,m,n,r,c);
+            if (r >= 0 && c >= 0 && r < m && c < n && !visited[r][c]) {
+                findWords(matrix, words, visited, m, n, r, c);
             }
         }
 

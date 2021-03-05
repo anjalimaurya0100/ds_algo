@@ -4,6 +4,21 @@ public class DLL<T> {
     public DNode<T> head = null;
     public DNode<T> tail = null;
 
+    public static void main(String[] args) {
+        DLL<Integer> dlist = new DLL<>();
+        dlist.insertLast(1);
+        dlist.insertLast(2);
+        dlist.insertLast(3);
+        dlist.insertLast(4);
+        dlist.insertLast(5);
+        dlist.insertLast(6);
+        dlist.printList();
+        dlist.delete(dlist.head);
+        dlist.delete(dlist.tail);
+        dlist.delete(dlist.head.next.next);
+        dlist.printList();
+    }
+
     public void insertLast(T data) {
         DNode<T> newNode = new DNode<>(data);
         if (head == null) {
@@ -55,20 +70,5 @@ public class DLL<T> {
             node.next.prev = node.prev;
             node.prev.next = node.next;
         }
-    }
-
-    public static void main(String[] args) {
-        DLL<Integer> dlist = new DLL<>();
-        dlist.insertLast(1);
-        dlist.insertLast(2);
-        dlist.insertLast(3);
-        dlist.insertLast(4);
-        dlist.insertLast(5);
-        dlist.insertLast(6);
-        dlist.printList();
-        dlist.delete(dlist.head);
-        dlist.delete(dlist.tail);
-        dlist.delete(dlist.head.next.next);
-        dlist.printList();
     }
 }

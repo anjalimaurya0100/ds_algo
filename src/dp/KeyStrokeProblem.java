@@ -8,19 +8,19 @@ public class KeyStrokeProblem {
     }
 
     public int maxLength(int n) {
-        int[] dp = new int[n+1];
+        int[] dp = new int[n + 1];
         if (n <= 3) {
             return n;
         }
-        for(int i = 0; i <= 3; i++) {
+        for (int i = 0; i <= 3; i++) {
             dp[i] = i;
         }
 
-        for(int i = 4; i <= n; i++) {
+        for (int i = 4; i <= n; i++) {
             int factor = 2;
             int max = Integer.MIN_VALUE;
-            for(int j = i-3; j >= 0; j--) {
-                max = Math.max(max, factor*dp[j]);
+            for (int j = i - 3; j >= 0; j--) {
+                max = Math.max(max, factor * dp[j]);
                 factor++;
             }
             dp[i] = max;

@@ -2,15 +2,29 @@ package linkedlist;
 
 public class FlattenLL {
     Nodedown head;
-    static  class Nodedown {
-        int data;
-        Nodedown next;
-        Nodedown down;
-        public Nodedown(int data){
-            this.data = data;
-            this.next = null;
-            this.down = null;
-        }
+
+    public static void main(String[] args) {
+        FlattenLL L = new FlattenLL();
+        L.head = L.insert(L.head, 29);
+        L.head = L.insert(L.head, 7);
+        L.head = L.insert(L.head, 6);
+        L.head = L.insert(L.head, 4);
+
+        L.head.next = L.insert(L.head.next, 21);
+        L.head.next = L.insert(L.head.next, 12);
+
+        L.head.next.next = L.insert(L.head.next.next, 48);
+        L.head.next.next = L.insert(L.head.next.next, 23);
+        L.head.next.next = L.insert(L.head.next.next, 18);
+
+        L.head.next.next.next = L.insert(L.head.next.next.next, 44);
+        L.head.next.next.next = L.insert(L.head.next.next.next, 41);
+        L.head.next.next.next = L.insert(L.head.next.next.next, 36);
+        L.head.next.next.next = L.insert(L.head.next.next.next, 24);
+
+        L.head = L.flattenLL(L.head);
+
+        L.printNode();
     }
 
     public Nodedown flattenLL(Nodedown node) {
@@ -55,8 +69,7 @@ public class FlattenLL {
         return newLL.down;
     }
 
-    Nodedown insert(Nodedown headPtr, int data)
-    {
+    Nodedown insert(Nodedown headPtr, int data) {
         /*Allocate the Node*/
         Nodedown new_node = new Nodedown(data);
 
@@ -72,35 +85,22 @@ public class FlattenLL {
 
     void printNode() {
         Nodedown temp = head;
-        while (temp != null)
-        {
+        while (temp != null) {
             System.out.print(temp.data + " ");
             temp = temp.down;
         }
         System.out.println();
     }
 
-    public static void main(String[] args) {
-        FlattenLL L = new FlattenLL();
-        L.head = L.insert(L.head, 29);
-        L.head = L.insert(L.head, 7);
-        L.head = L.insert(L.head, 6);
-        L.head = L.insert(L.head, 4);
+    static class Nodedown {
+        int data;
+        Nodedown next;
+        Nodedown down;
 
-        L.head.next = L.insert(L.head.next, 21);
-        L.head.next = L.insert(L.head.next, 12);
-
-        L.head.next.next = L.insert(L.head.next.next, 48);
-        L.head.next.next = L.insert(L.head.next.next, 23);
-        L.head.next.next = L.insert(L.head.next.next, 18);
-
-        L.head.next.next.next = L.insert(L.head.next.next.next, 44);
-        L.head.next.next.next = L.insert(L.head.next.next.next, 41);
-        L.head.next.next.next = L.insert(L.head.next.next.next, 36);
-        L.head.next.next.next = L.insert(L.head.next.next.next, 24);
-
-        L.head = L.flattenLL(L.head);
-
-        L.printNode();
+        public Nodedown(int data) {
+            this.data = data;
+            this.next = null;
+            this.down = null;
+        }
     }
 }

@@ -8,10 +8,10 @@ public class CountFreqOfArray {
             array[i] = array[i] - 1;
         }
         for (int i = 0; i < n; i++) {
-            array[array[i]% n]= array[array[i]%n]+n;
+            array[array[i] % n] = array[array[i] % n] + n;
         }
-        for(int i = 0 ; i<n;i++){
-            System.out.println(i+1 + " -> " + array[i]/n);
+        for (int i = 0; i < n; i++) {
+            System.out.println(i + 1 + " -> " + array[i] / n);
         }
     }
 }

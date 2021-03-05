@@ -17,11 +17,11 @@ public class LeftViewOfBT {
         }
 
         if (isLeftView) {
-            leftViewRecursive(node.left, level+1);
-            leftViewRecursive(node.right, level+1);
+            leftViewRecursive(node.left, level + 1);
+            leftViewRecursive(node.right, level + 1);
         } else {
-            leftViewRecursive(node.right, level+1);
-            leftViewRecursive(node.left, level+1);
+            leftViewRecursive(node.right, level + 1);
+            leftViewRecursive(node.left, level + 1);
         }
     }
 
@@ -30,18 +30,18 @@ public class LeftViewOfBT {
         queue.add(new Pair<>(node, 0));
 
         int maxLevel = -1;
-        while(!queue.isEmpty()) {
+        while (!queue.isEmpty()) {
             Pair<Node, Integer> t = queue.poll();
             if (maxLevel < t.second) {
                 System.out.print(t.first.data + " ");
                 maxLevel = t.second;
             }
 
-            if(t.first.left != null)
-                queue.add(new Pair<>(t.first.left, t.second+1));
+            if (t.first.left != null)
+                queue.add(new Pair<>(t.first.left, t.second + 1));
 
-            if(t.first.right != null)
-                queue.add(new Pair<>(t.first.right, t.second+1));
+            if (t.first.right != null)
+                queue.add(new Pair<>(t.first.right, t.second + 1));
         }
         System.out.println();
     }
