@@ -8,7 +8,7 @@ import java.util.Map;
 public class GroupAnagrams {
     public static List<List<String>> groupAnagrams(String[] strings) {
         Map<String, List<String>> map = new HashMap<>();
-        for(String str: strings) {
+        for (String str : strings) {
             char[] charCount = new char[26];
             for (int i = 0; i < str.length(); i++) {
                 charCount[str.charAt(i) - 'a']++;
@@ -29,8 +29,8 @@ public class GroupAnagrams {
     public static void main(String[] args) {
         String[] strings = {"abc", "cab", "listen", "silent", "pen", "fired", "fried"};
         List<List<String>> result = groupAnagrams(strings);
-        for (List<String> list: result) {
-            for(String str: list) {
+        for (List<String> list : result) {
+            for (String str : list) {
                 System.out.print(str + " ");
             }
             System.out.println();

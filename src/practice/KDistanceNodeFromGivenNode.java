@@ -11,7 +11,7 @@ public class KDistanceNodeFromGivenNode {
         root.left.right.right = new practice.Node(16);
         root.right = target;
         root.right.right = new practice.Node(20);
-        kDistance(root, target,3);
+        kDistance(root, target, 3);
     }
 
     public static int kDistance(Node node, Node target, int k) {

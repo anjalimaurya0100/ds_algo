@@ -5,15 +5,23 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class SnakeLadder {
-    static class Step {
-        int i;
-        int dist;
+    public static void main(String[] args) {
+        int[] moves = new int[30];
+        Arrays.fill(moves, -1);
+        //Ladders
+        moves[2] = 21;
+        moves[4] = 7;
+        moves[10] = 25;
+        moves[19] = 28;
 
-        public Step(int i, int dist) {
-            this.i = i;
-            this.dist = dist;
-        }
+        //Snakes
+        moves[26] = 0;
+        moves[20] = 8;
+        moves[16] = 3;
+        moves[18] = 6;
 
+        SnakeLadder sl = new SnakeLadder();
+        System.out.println("Min Dice throws required is " + sl.minSteps(moves));
     }
 
     public int minSteps(int[] array) {
@@ -45,22 +53,14 @@ public class SnakeLadder {
         return -1;
     }
 
-    public static void main(String[] args) {
-        int[] moves = new int[30];
-        Arrays.fill(moves, -1);
-        //Ladders
-        moves[2] = 21;
-        moves[4] = 7;
-        moves[10] = 25;
-        moves[19] = 28;
+    static class Step {
+        int i;
+        int dist;
 
-        //Snakes
-        moves[26] = 0;
-        moves[20] = 8;
-        moves[16] = 3;
-        moves[18] = 6;
+        public Step(int i, int dist) {
+            this.i = i;
+            this.dist = dist;
+        }
 
-        SnakeLadder sl = new SnakeLadder();
-        System.out.println("Min Dice throws required is " + sl.minSteps(moves));
     }
 }

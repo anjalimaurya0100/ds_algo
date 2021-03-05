@@ -1,21 +1,22 @@
 package graph;
 
-import tree.Pair;
-
-import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Queue;
 
 public class NumberOfIsland {
-    static class Point {
-        int x;
-        int y;
-
-        public Point(int i, int j) {
-            this.x = i;
-            this.y = j;
-        }
+    public static void main(String[] args) {
+        int[][] matrix = {
+                {0, 0, 1, 1, 0},
+                {1, 0, 1, 1, 0},
+                {0, 1, 0, 0, 0},
+                {0, 0, 0, 0, 1},
+                {0, 0, 1, 1, 0},
+                {1, 0, 0, 0, 0},
+                {1, 1, 0, 1, 1}
+        };
+        boolean[][] visited = new boolean[matrix.length][matrix[0].length];
+        NumberOfIsland nfi = new NumberOfIsland();
+        System.out.println("Number of Islands: " + nfi.numberOfIslands(matrix, visited));
     }
 
     private void bfs(Point s, int[][] matrix, boolean[][] visited) {
@@ -29,7 +30,7 @@ public class NumberOfIsland {
         while (!queue.isEmpty()) {
             Point p = queue.remove();
 
-            for(int i = 0; i < 8; i++) {
+            for (int i = 0; i < 8; i++) {
                 int r = p.x + rowNum[i];
                 int c = p.y + colNum[i];
 
@@ -43,9 +44,9 @@ public class NumberOfIsland {
 
     public int numberOfIslands(int[][] matrix, boolean[][] visited) {
         int island = 0;
-        for(int i = 0 ; i < matrix.length ; i++){
-            for(int j = 0 ; j < matrix[0].length ; j++){
-                if(!visited[i][j] && matrix[i][j] == 1) {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                if (!visited[i][j] && matrix[i][j] == 1) {
                     bfs(new Point(i, j), matrix, visited);
                     island++;
                 }
@@ -54,18 +55,13 @@ public class NumberOfIsland {
         return island;
     }
 
-    public static void main(String[] args) {
-        int[][] matrix = {
-                {0,0,1,1,0},
-                {1,0,1,1,0},
-                {0,1,0,0,0},
-                {0,0,0,0,1},
-                {0,0,1,1,0},
-                {1,0,0,0,0},
-                {1,1,0,1,1}
-        };
-        boolean[][] visited = new boolean[matrix.length][matrix[0].length];
-        NumberOfIsland nfi = new NumberOfIsland();
-        System.out.println("Number of Islands: " + nfi.numberOfIslands(matrix, visited));
+    static class Point {
+        int x;
+        int y;
+
+        public Point(int i, int j) {
+            this.x = i;
+            this.y = j;
+        }
     }
 }

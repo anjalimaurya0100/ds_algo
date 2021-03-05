@@ -8,16 +8,6 @@ public class RottenOranges {
     public static int R;
     public static int C;
 
-    static class Element {
-        int x;
-        int y;
-
-        Element(int x, int y) {
-            this.x = x;
-            this.y = y;
-        }
-    }
-
     public static int rottenOranges(int[][] matrix) {
         Queue<Element> q = new LinkedList<>();
         Element temp;
@@ -97,6 +87,16 @@ public class RottenOranges {
             System.out.println("not all the oranges are rotten");
         } else {
             System.out.println("time required to rot all oranges " + time);
+        }
+    }
+
+    static class Element {
+        int x;
+        int y;
+
+        Element(int x, int y) {
+            this.x = x;
+            this.y = y;
         }
     }
 }

@@ -3,6 +3,21 @@ package linkedlist;
 public class LinkedList {
     public Node head = null;
 
+    public static void main(String[] args) {
+        LinkedList list = new LinkedList();
+        list.insert(1);
+        list.insert(2);
+        list.insert(3);
+        list.insert(4);
+        list.printList(list.head);
+        System.out.println(list.search(3));
+        Node temp = list.head;
+        Node n = list.reverse(temp);
+        list.printList(n);
+        Node n2 = list.reverseIterative(list.head);
+        list.printList(n2);
+    }
+
     public void insert(int data) {
         Node newNode = new Node(data);
 
@@ -66,14 +81,14 @@ public class LinkedList {
         return rest;
     }
 
-    public Node reverseIterative(Node node){
+    public Node reverseIterative(Node node) {
         Node current = head;
         Node next = null;
         Node previous = null;
-        if(node == null){
+        if (node == null) {
             return null;
         }
-        while(current != null){
+        while (current != null) {
             next = current.next;
             current.next = previous;
             previous = current;
@@ -81,20 +96,5 @@ public class LinkedList {
         }
         node = previous;
         return node;
-    }
-
-    public static void main(String[] args) {
-        LinkedList list = new LinkedList();
-        list.insert(1);
-        list.insert(2);
-        list.insert(3);
-        list.insert(4);
-        list.printList(list.head);
-        System.out.println(list.search(3));
-        Node temp = list.head;
-        Node n = list.reverse(temp);
-        list.printList(n);
-        Node n2 = list.reverseIterative(list.head);
-        list.printList(n2);
     }
 }

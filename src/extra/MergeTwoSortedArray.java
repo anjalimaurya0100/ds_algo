@@ -6,7 +6,7 @@ public class MergeTwoSortedArray {
     public static void main(String[] args) {
         int[] array1 = {1, 2, 3, 4};
         int[] array2 = {1, 2, 3, 4};
-        int[] result = mergeArray(array1,array2);
+        int[] result = mergeArray(array1, array2);
         System.out.println(Arrays.toString(result));
     }
 
@@ -22,11 +22,11 @@ public class MergeTwoSortedArray {
                 result[k++] = array2[j++];
         }
 
-        while(i<array1.length){
+        while (i < array1.length) {
             result[k++] = array1[i++];
         }
-        while(j<array2.length){
-            result[k++]=array2[j++];
+        while (j < array2.length) {
+            result[k++] = array2[j++];
         }
         return result;
     }

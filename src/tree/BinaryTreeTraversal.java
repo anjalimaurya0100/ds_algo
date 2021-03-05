@@ -6,7 +6,7 @@ import java.util.Stack;
 
 public class BinaryTreeTraversal {
     public static void preorder(Node node) {
-        if(node == null)
+        if (node == null)
             return;
 
         System.out.println(node.data);
@@ -14,8 +14,8 @@ public class BinaryTreeTraversal {
         preorder(node.right);
     }
 
-    public static void inorder(Node node){
-        if(node == null){
+    public static void inorder(Node node) {
+        if (node == null) {
             return;
         }
         inorder(node.left);
@@ -23,8 +23,8 @@ public class BinaryTreeTraversal {
         inorder(node.right);
     }
 
-    public static void postorder(Node node){
-        if(node == null){
+    public static void postorder(Node node) {
+        if (node == null) {
             return;
         }
         postorder(node.left);
@@ -36,14 +36,14 @@ public class BinaryTreeTraversal {
         Queue<Node> queue = new LinkedList<>();
         queue.add(node);
 
-        while(!queue.isEmpty()) {
+        while (!queue.isEmpty()) {
             Node t = queue.poll();
             System.out.print(t.data + " ");
 
-            if(t.left != null)
+            if (t.left != null)
                 queue.add(t.left);
 
-            if(t.right != null)
+            if (t.right != null)
                 queue.add(t.right);
         }
         System.out.println();
@@ -55,18 +55,18 @@ public class BinaryTreeTraversal {
 
         queue.add(node);
 
-        while(!queue.isEmpty()) {
+        while (!queue.isEmpty()) {
             Node t = queue.remove();
             stack.push(t);
 
-            if(t.right != null)
+            if (t.right != null)
                 queue.add(t.right);
 
-            if(t.left != null)
+            if (t.left != null)
                 queue.add(t.left);
         }
 
-        while(!stack.isEmpty()){
+        while (!stack.isEmpty()) {
             Node t = stack.pop();
             System.out.print(t.data + " ");
         }
@@ -75,7 +75,7 @@ public class BinaryTreeTraversal {
     }
 
     public static int sumOfNodeData(Node node) {
-        if(node == null){
+        if (node == null) {
             return 0;
         }
         return node.data + sumOfNodeData(node.left) + sumOfNodeData(node.right);

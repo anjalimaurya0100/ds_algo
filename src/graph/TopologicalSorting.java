@@ -15,31 +15,6 @@ public class TopologicalSorting {
         this.stack = new Stack<>();
     }
 
-    public void addEdge(int u, int v) {
-        this.am[u][v] = 1;
-    }
-
-    public void dfs(int u) {
-        visited[u]=true;
-        for(int v = 0 ; v<am[u].length ; v++){
-            if(am[u][v] == 1 && !visited[v] ){
-                dfs(v);
-            }
-        }
-        stack.push(u);
-    }
-
-    public void topologicalSort() {
-        for(int u = 0 ; u < am.length ; u++){
-            if(!visited[u]){
-                dfs(u);
-            }
-        }
-        while (!stack.isEmpty()){
-            System.out.println(stack.pop());
-        }
-    }
-
     public static void main(String[] args) {
         TopologicalSorting g = new TopologicalSorting(6);
 
@@ -51,5 +26,30 @@ public class TopologicalSorting {
         g.addEdge(3, 1);
 
         g.topologicalSort();
+    }
+
+    public void addEdge(int u, int v) {
+        this.am[u][v] = 1;
+    }
+
+    public void dfs(int u) {
+        visited[u] = true;
+        for (int v = 0; v < am[u].length; v++) {
+            if (am[u][v] == 1 && !visited[v]) {
+                dfs(v);
+            }
+        }
+        stack.push(u);
+    }
+
+    public void topologicalSort() {
+        for (int u = 0; u < am.length; u++) {
+            if (!visited[u]) {
+                dfs(u);
+            }
+        }
+        while (!stack.isEmpty()) {
+            System.out.println(stack.pop());
+        }
     }
 }

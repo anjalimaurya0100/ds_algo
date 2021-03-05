@@ -18,27 +18,6 @@ public class IDSRInO1 {
         hm = new HashMap<>();
     }
 
-    public void insert(int a) {
-        al.add(a);
-        hm.put(a, al.size()-1);
-    }
-
-    public void remove(int a){
-        int i = hm.get(a);
-        hm.remove(a);
-        al.add(i, al.get(al.size()-1));
-        al.remove(al.size()-1);
-    }
-
-    public int search(int a){
-        return hm.get(a);
-    }
-
-    public int getRandom(){
-        int i = (int) (Math.random()*100) % al.size();
-        return al.get(i);
-    }
-
     public static void main(String[] args) {
         IDSRInO1 ds = new IDSRInO1();
         ds.insert(12);
@@ -50,5 +29,26 @@ public class IDSRInO1 {
         ds.remove(14);
         System.out.println(ds.search(20));
         System.out.println(ds.getRandom());
+    }
+
+    public void insert(int a) {
+        al.add(a);
+        hm.put(a, al.size() - 1);
+    }
+
+    public void remove(int a) {
+        int i = hm.get(a);
+        hm.remove(a);
+        al.add(i, al.get(al.size() - 1));
+        al.remove(al.size() - 1);
+    }
+
+    public int search(int a) {
+        return hm.get(a);
+    }
+
+    public int getRandom() {
+        int i = (int) (Math.random() * 100) % al.size();
+        return al.get(i);
     }
 }

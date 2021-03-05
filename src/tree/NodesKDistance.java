@@ -1,16 +1,16 @@
 package tree;
 
 public class NodesKDistance {
-    public static void distanceK(Node node,int k){
-        if(node == null){
+    public static void distanceK(Node node, int k) {
+        if (node == null) {
             return;
         }
-        if(k==0){
+        if (k == 0) {
             System.out.println(node.data);
 
-        } else{
-            distanceK(node.left,k-1);
-            distanceK(node.right,k-1);
+        } else {
+            distanceK(node.left, k - 1);
+            distanceK(node.right, k - 1);
         }
     }
 
@@ -23,7 +23,7 @@ public class NodesKDistance {
         root.left.right.right = new Node(16);
         root.right = new Node(18);
         root.right.right = new Node(20);
-        distanceK(root,3);
+        distanceK(root, 3);
 
     }
 }

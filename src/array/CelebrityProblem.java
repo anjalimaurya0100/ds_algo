@@ -11,18 +11,18 @@ public class CelebrityProblem {
 
         int n = matrix.length;
         int a = 0;
-        int b = n-1;
-        while(a<b){
-            if(matrix[a][b] == 1) {
+        int b = n - 1;
+        while (a < b) {
+            if (matrix[a][b] == 1) {
                 a++;
-            }else{
+            } else {
                 b--;
             }
         }
 
         int flag = 0;
-        for(int i=0;i<n;i++){
-            if(i != a && (matrix[a][i] == 1 || matrix[i][a]==0)){
+        for (int i = 0; i < n; i++) {
+            if (i != a && (matrix[a][i] == 1 || matrix[i][a] == 0)) {
                 flag = -1;
                 break;
             }

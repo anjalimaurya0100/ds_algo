@@ -15,6 +15,22 @@ public class TreeBottomView {
         int dia = 0;
     }
 
+    public static void main(String[] args) {
+        TreeBottomView tree = new TreeBottomView();
+        tree.root = new Node(1);
+        tree.root.left = new Node(2);
+        tree.root.right = new Node(3);
+        tree.root.left.right = new Node(4);
+        tree.root.left.right.right = new Node(5);
+        tree.root.left.right.right.right = new Node(6);
+
+
+        tree.treeBottom(tree.root, tree.map, 0, 0);
+        for (Pair<Integer, Integer> v : tree.map.values()) {
+            System.out.println(v.first);
+        }
+    }
+
     public void treeBottom(Node node, Map<Integer, Pair<Integer, Integer>> map, int dia, int height) {
         if (node == null) {
             return;
@@ -27,23 +43,7 @@ public class TreeBottomView {
                 map.put(dia, new Pair<>(node.data, height));
             }
         }
-        treeBottom(node.left,map,dia-1,height+1);
-        treeBottom(node.right,map,dia+1,height+1);
-    }
-
-    public static void main(String[] args) {
-        TreeBottomView tree = new TreeBottomView();
-        tree.root = new Node(1);
-        tree.root.left = new Node(2);
-        tree.root.right = new Node(3);
-        tree.root.left.right = new Node(4);
-        tree.root.left.right.right = new Node(5);
-        tree.root.left.right.right.right = new Node(6);
-
-
-        tree.treeBottom(tree.root,tree.map,0,0);
-        for(Pair<Integer,Integer> v : tree.map.values()) {
-            System.out.println(v.first);
-        }
+        treeBottom(node.left, map, dia - 1, height + 1);
+        treeBottom(node.right, map, dia + 1, height + 1);
     }
 }

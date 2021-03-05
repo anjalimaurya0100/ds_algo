@@ -1,17 +1,6 @@
 package array;
 
 public class RectangleOverlap {
-    public static class Point {
-        int x;
-        int y;
-
-        // constructor
-        Point(int x, int y) {
-            this.x = x;
-            this.y = y;
-        }
-    }
-
     public static void main(String[] args) {
         Point a1 = new Point(2, 3);
         Point b1 = new Point(2, 3);
@@ -26,9 +15,17 @@ public class RectangleOverlap {
         if (a1.x > b2.x || a2.x > b1.x)
             return false;
 
-        if (a1.y < b2.y || a2.y < b1.y)
-            return false;
+        return a1.y >= b2.y && a2.y >= b1.y;
+    }
 
-        return true;
+    public static class Point {
+        int x;
+        int y;
+
+        // constructor
+        Point(int x, int y) {
+            this.x = x;
+            this.y = y;
+        }
     }
 }

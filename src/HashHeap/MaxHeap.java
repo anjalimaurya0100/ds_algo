@@ -4,10 +4,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MaxHeap {
-    private List<Integer> heap;
+    private final List<Integer> heap;
 
     public MaxHeap() {
         this.heap = new ArrayList<>();
+    }
+
+    public static void main(String[] args) {
+        MaxHeap mh = new MaxHeap();
+        mh.insert(11);
+        mh.insert(3);
+        mh.insert(15);
+        mh.insert(5);
+        mh.insert(4);
+        mh.insert(45);
+
+        System.out.println("del " + mh.delete(3));
+
+        for (Integer val : mh.heap) {
+            System.out.println(val);
+        }
     }
 
     public void insert(int value) {
@@ -69,22 +85,6 @@ public class MaxHeap {
         if (largest != i) {
             swap(i, largest);
             heapify(largest);
-        }
-    }
-
-    public static void main(String[] args) {
-        MaxHeap mh = new MaxHeap();
-        mh.insert(11);
-        mh.insert(3);
-        mh.insert(15);
-        mh.insert(5);
-        mh.insert(4);
-        mh.insert(45);
-
-        System.out.println("del " + mh.delete(3));
-
-        for (Integer val : mh.heap) {
-            System.out.println(val);
         }
     }
 }

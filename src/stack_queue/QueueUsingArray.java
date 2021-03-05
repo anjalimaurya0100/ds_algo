@@ -1,38 +1,16 @@
 package stack_queue;
 
 public class QueueUsingArray {
-    private int[] queue;
+    private final int[] queue;
     private int rear;
     private int front;
-    private int capacity;
+    private final int capacity;
 
-    public QueueUsingArray(int capacity){
+    public QueueUsingArray(int capacity) {
         this.capacity = capacity;
         this.queue = new int[capacity];
         this.front = 0;
         this.rear = 0;
-    }
-
-    public boolean isEmpty(){
-        return rear-front ==0;
-    }
-
-
-
-    public void enqueue (int value){
-
-        this.queue[rear]=value;
-        rear++;
-    }
-
-    public int dequeue(){
-        if(this.isEmpty()){
-            System.out.println("Queue is Empty");
-            return -1;
-        }
-        int value  = this.queue[front];
-        front++;
-        return value;
     }
 
     public static void main(String[] args) {
@@ -49,5 +27,25 @@ public class QueueUsingArray {
         System.out.println(qua.isEmpty());
 
 
+    }
+
+    public boolean isEmpty() {
+        return rear - front == 0;
+    }
+
+    public void enqueue(int value) {
+
+        this.queue[rear] = value;
+        rear++;
+    }
+
+    public int dequeue() {
+        if (this.isEmpty()) {
+            System.out.println("Queue is Empty");
+            return -1;
+        }
+        int value = this.queue[front];
+        front++;
+        return value;
     }
 }

@@ -4,32 +4,32 @@ public class MaxPathSumBT {
     static int maxSum = 0;
     static int diameter = 0;
 
-    public static int maxPathSum(Node node){
-        if(node == null){
+    public static int maxPathSum(Node node) {
+        if (node == null) {
             return 0;
         }
         int left = maxPathSum(node.left);
         int right = maxPathSum(node.right);
 
-        int maxValue = Math.max(Math.max(left , right)+node.data , node.data);
-        int maxTop = Math.max(maxValue,left+right+node.data);
+        int maxValue = Math.max(Math.max(left, right) + node.data, node.data);
+        int maxTop = Math.max(maxValue, left + right + node.data);
 
-        maxSum = Math.max(maxSum,maxTop);
+        maxSum = Math.max(maxSum, maxTop);
 
         return maxValue;
     }
 
-    public static int diameterOfBt(Node node){
-        if(node == null){
+    public static int diameterOfBt(Node node) {
+        if (node == null) {
             return 0;
         }
-        int left  = diameterOfBt(node.left);
-        int right  = diameterOfBt(node.right);
+        int left = diameterOfBt(node.left);
+        int right = diameterOfBt(node.right);
 
-        int maxValue = Math.max(left,right)+ 1;
-        int maxTop = Math.max(left+right+1, maxValue);
+        int maxValue = Math.max(left, right) + 1;
+        int maxTop = Math.max(left + right + 1, maxValue);
 
-        diameter = Math.max(diameter,maxTop);
+        diameter = Math.max(diameter, maxTop);
         return maxValue;
     }
 

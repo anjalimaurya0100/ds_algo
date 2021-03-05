@@ -3,7 +3,7 @@ package dp;
 public class CoinsSum {
 
     public static int coinsUsed(int[] coin, int sum) {
-        int[] dp = new int[sum+1];
+        int[] dp = new int[sum + 1];
 
         dp[0] = 1;
         for (int k : coin) {

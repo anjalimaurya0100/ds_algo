@@ -9,13 +9,13 @@ public class NthStair {
     }
 
     public int nthStair(int m, int n) {
-        int[] dp = new int[n+1];
+        int[] dp = new int[n + 1];
         dp[0] = 1;
         int sum = 0;
-        for(int i = 1; i <= n; i++) {
-            int s = i-m-1;
-            int e = i-1;
-            if(s >= 0) {
+        for (int i = 1; i <= n; i++) {
+            int s = i - m - 1;
+            int e = i - 1;
+            if (s >= 0) {
                 sum = sum - dp[s];
             }
             sum = sum + dp[e];

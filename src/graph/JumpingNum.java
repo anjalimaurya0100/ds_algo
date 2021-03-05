@@ -9,31 +9,31 @@ public class JumpingNum {
         jn.jumpingNum(6);
     }
 
-    public void jumpingNum(int x){
-         System.out.println("0");
-         for(int i = 1 ; i<=9; i++ ){
-             bfs(x,i);
-         }
+    public void jumpingNum(int x) {
+        System.out.println("0");
+        for (int i = 1; i <= 9; i++) {
+            bfs(x, i);
+        }
     }
 
-    private void bfs(int x , int num){
+    private void bfs(int x, int num) {
         Queue<Integer> q = new LinkedList<>();
         q.add(num);
-         while (!q.isEmpty()){
-              Integer u = q.remove();
+        while (!q.isEmpty()) {
+            Integer u = q.remove();
 
-             if(u <= x){
-                 System.out.println(u);
-                 int lastDigit = u%10;
-                 if(lastDigit == 0){
-                     q.add(u*10 + lastDigit+1);
-                 }else if(lastDigit ==9) {
-                     q.add(u*10 + lastDigit-1);
-                 }else {
-                     q.add(u*10 + lastDigit+1);
-                     q.add(u*10 + lastDigit-1);
-                 }
-             }
+            if (u <= x) {
+                System.out.println(u);
+                int lastDigit = u % 10;
+                if (lastDigit == 0) {
+                    q.add(u * 10 + lastDigit + 1);
+                } else if (lastDigit == 9) {
+                    q.add(u * 10 + lastDigit - 1);
+                } else {
+                    q.add(u * 10 + lastDigit + 1);
+                    q.add(u * 10 + lastDigit - 1);
+                }
+            }
         }
     }
 }
