@@ -26,6 +26,7 @@ public class BoggleSearch {
     private static void findWords(char[][] matrix, String[] words, boolean[][] visited, int m, int n, int i, int j) {
         visited[i][j] = true;
         ans = ans + matrix[i][j];
+        System.out.println(ans);
 
         if (isValidWord(words)) {
             count++;
