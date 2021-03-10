@@ -9,20 +9,20 @@ public class JumpingNum {
         jn.jumpingNum(6);
     }
 
-    public void jumpingNum(int x) {
+    public void jumpingNum(int input) {
         System.out.println("0");
         for (int i = 1; i <= 9; i++) {
-            bfs(x, i);
+            bfs(i, input);
         }
     }
 
-    private void bfs(int x, int num) {
+    private void bfs(int num, int input) {
         Queue<Integer> q = new LinkedList<>();
         q.add(num);
         while (!q.isEmpty()) {
             Integer u = q.remove();
 
-            if (u <= x) {
+            if (u <= input) {
                 System.out.println(u);
                 int lastDigit = u % 10;
                 if (lastDigit == 0) {
