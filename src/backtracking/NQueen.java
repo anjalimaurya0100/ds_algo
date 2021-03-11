@@ -25,19 +25,15 @@ public class NQueen {
             }
         }
 
-//        for(i = 0; i < board.length; i++) { // not required
-//            if (board[i][col] == 1) {
-//                return false;
-//            }
-//        }
-
         for(i = row, j = col; i >= 0 && j >= 0; i--, j--) {
             if (board[i][j] == 1) {
                 return false;
             }
         }
 
-        for(i = row, j = col; i >= 0 && j < board.length; i--, j++) {
+
+
+        for(i = row, j = col; i < board.length && j >= 0 ; i++, j--) {
             if (board[i][j] == 1) {
                 return false;
             }
@@ -47,10 +43,10 @@ public class NQueen {
 
     public static void main(String[] args) {
         int[][] board = {
-                {0, 0, 0, 0},
-                {0, 0, 0, 0},
-                {0, 0, 0, 0},
-                {0, 0, 0, 0}
+                {0, 0, 0 ,0},
+                {0, 0, 0 ,0},
+                {0, 0, 0 ,0},
+                {0, 0, 0 ,0}
         };
 
         nQueen(board, 0);
