@@ -17,8 +17,8 @@ public class PowXN {
 
     }
     public static void main(String[] args) {
-        double x = 2;
-        int n = 10;
+        double x = 10;
+        int n = 2;
         System.out.println(findPow(x,n));
     }
 }

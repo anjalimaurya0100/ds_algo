@@ -11,9 +11,9 @@ public class RatMaze {
         if(x >=0 && y >= 0 && x<=N-1 && y<=N-1 && matrix[x][y]==0 && path[x][y] == 0){
             path[x][y]=1;
 
-            if(findPathInMaze(matrix,x+1,y,path))
-                return true;
             if(findPathInMaze(matrix,x,y+1,path))
+                return true;
+            if(findPathInMaze(matrix,x+1,y,path))
                 return true;
 
 //            if(findPathInMaze(matrix,x-1,y,path))

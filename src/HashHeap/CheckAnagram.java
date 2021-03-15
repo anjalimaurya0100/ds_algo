@@ -21,7 +21,7 @@ public class CheckAnagram {
     }
 
     public static void main(String[] args) {
-        String a = "FIREP";
+        String a = "FIRED";
         String b = "FRIED";
 
         System.out.println(checkAnagram(a, b));

@@ -23,7 +23,7 @@ public class StringPermutation {
     }
 
     public static void main(String[] args) {
-        String input = "CBA";
+        String input = "CAB";
         permutations(input, 0, input.length()-1);
     }
 }

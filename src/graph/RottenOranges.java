@@ -28,7 +28,7 @@ public class RottenOranges {
         while (!q.isEmpty()) {
             boolean flag = false;
 
-            while (!checkCell(q.peek())) {
+            while (!checkSeparater(q.peek())) {
                 temp = q.remove();
                 for (int i = 0; i < 4; i++) {
                     int r = temp.x + rowNum[i];
@@ -57,7 +57,7 @@ public class RottenOranges {
         return (i >= 0 && j >= 0 && i < R && j < C);
     }
 
-    static boolean checkCell(Element temp) {
+    static boolean checkSeparater(Element temp) {
         return (temp.x == -1 && temp.y == -1);
     }
 
