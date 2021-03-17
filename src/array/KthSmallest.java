@@ -2,14 +2,14 @@ package array;
 
 public class KthSmallest {
     public static void main(String[] args) {
-        int[] array = {9, 10, 11, 2, 8, 3, 5};
-        int k = 6;
+        int[] array = {9, 10, 11, 2, 8, 1, 5};
+        int k = 5;
         int numIndex = kthSmallest(array, 0, array.length - 1, k - 1);
         System.out.println(array[numIndex]);
     }
 
     public static int kthSmallest(int[] array, int low, int high, int kIndex) {
-        if (low < high) {
+        if (low <= high) {
             int pi = partition(array, low, high);
             if (kIndex < pi) {
                 return kthSmallest(array, low, pi - 1, kIndex);

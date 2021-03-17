@@ -2,7 +2,7 @@ package array;
 
 public class MaxNumberInIncDecArray {
     public static void main(String[] args) {
-        int[] array = {1, 2, 3, 4, 5, 4, 3, 2, 1};
+        int[] array = {1, 2, 3, 4, 5, 6, 3, 2, 1};
         int val = maxNumber(array, 0, array.length - 1);
         System.out.println(val);
     }

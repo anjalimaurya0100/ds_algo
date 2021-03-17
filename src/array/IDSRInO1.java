@@ -37,8 +37,7 @@ public class IDSRInO1 {
     }
 
     public void remove(int a) {
-        int i = hm.get(a);
-        hm.remove(a);
+        int i = hm.remove(a);
         al.add(i, al.get(al.size() - 1));
         al.remove(al.size() - 1);
     }
